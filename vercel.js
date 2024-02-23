@@ -1,13 +1,12 @@
 {
-    "headers": [
-      {
-        "source": "/_nuxt/*.js",
-        "headers": [
-          {
-            "key": "Content-Type",
-            "value": "application/javascript"
-          }
-        ]
-      }
-    ]
-  }
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/_nuxt/(.*)",
+      "headers": { "Content-Type": "application/javascript" },
+      "continue": true
+    }
+  ]
+}
