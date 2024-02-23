@@ -1,9 +1,13 @@
 {
-    "source": "/_nuxt/*.js",
     "headers": [
       {
-        "key": "Content-Type",
-        "value": "application/javascript"
+        "source": "/_nuxt/*.js",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/javascript"
+          }
+        ]
       }
     ]
   }
