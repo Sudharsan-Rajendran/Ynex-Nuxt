@@ -1,9 +1,9 @@
 <template>
-  <NuxtLayout>
+  <!-- <NuxtLayout> -->
     <NuxtLoadingIndicator />
     <!-- here -->
     <NuxtPage />
-  </NuxtLayout>
+  <!-- </NuxtLayout> -->
 </template>
 <script setup lang="ts">
 
