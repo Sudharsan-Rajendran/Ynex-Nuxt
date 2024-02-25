@@ -13,6 +13,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt', 
     '@vueuse/motion/nuxt'
   ],
+
+  
   // Used to add the base path of url Example : https://www.spruko.com/ynex-nuxt
   app: {
     baseURL: '/nuxt/preview', // Replace with your desired base path
@@ -43,5 +45,11 @@ export default defineNuxtConfig({
       'import.meta.env.BASE_URL': JSON.stringify('/nuxt/preview/'),
       'import.meta.env.googleMapsApiKey': JSON.stringify('AIzaSyCW16SmpzDNLsrP-npQii6_8vBu_EJvEjA')
     },
+  },
+
+  hooks: {
+    'nitro:config'(config) {
+      config.prerender!.routes = config.prerender!.routes!.filter((r) => r !== '/200.html')
+  }
   }
 })
