@@ -42,7 +42,8 @@ export default defineNuxtConfig({
   ],
   vite: {
     define: {
-      'import.meta.env.BASE_URL': JSON.stringify('/nuxt/preview/'),
+      // 'import.meta.env.BASE_URL': JSON.stringify('/nuxt/preview/'),
+      'import.meta.env.BASE_URL': JSON.stringify('https://github.com/Sudharsan-Rajendran/Ynex-Nuxt.git'),
       'import.meta.env.googleMapsApiKey': JSON.stringify('AIzaSyCW16SmpzDNLsrP-npQii6_8vBu_EJvEjA')
     },
   },
