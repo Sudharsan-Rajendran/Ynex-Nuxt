@@ -41,18 +41,9 @@ export default defineNuxtConfig({
     'nuxt-vite'
   ],
 
-  render: {
-    static: {
-        setHeaders: (resp, path) => {
-            if (
-                resp.req.originalUrl ===
-                '/.well-known/apple-app-site-association'
-            ) {
-                resp.setHeader('Content-Type', 'application/json')
-            }
-        },
-    },
-},
+  nitro: {
+    preset: 'vercel-edge',
+  },
   
   hooks: {
     'nitro:config'(config) {
