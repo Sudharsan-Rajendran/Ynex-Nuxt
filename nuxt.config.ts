@@ -40,14 +40,20 @@ export default defineNuxtConfig({
   buildModules: [
     'nuxt-vite'
   ],
-  vite: {
-    define: {
-      // 'import.meta.env.BASE_URL': JSON.stringify('/nuxt/preview/'),
-      'import.meta.env.BASE_URL': JSON.stringify('https://github.com/Sudharsan-Rajendran/Ynex-Nuxt.git'),
-      'import.meta.env.googleMapsApiKey': JSON.stringify('AIzaSyCW16SmpzDNLsrP-npQii6_8vBu_EJvEjA')
-    },
-  },
 
+  render: {
+    static: {
+        setHeaders: (resp, path) => {
+            if (
+                resp.req.originalUrl ===
+                '/.well-known/apple-app-site-association'
+            ) {
+                resp.setHeader('Content-Type', 'application/json')
+            }
+        },
+    },
+},
+  
   hooks: {
     'nitro:config'(config) {
       config.prerender!.routes = config.prerender!.routes!.filter((r) => r !== '/200.html')
