@@ -41,8 +41,8 @@ export default defineNuxtConfig({
     'nuxt-vite'
   ],
 
-  nitro: {
-    preset: 'vercel-edge',
+  script: {
+    type: 'module',
   },
   
   hooks: {
